@@ -9,6 +9,7 @@ import {routing} from './app.routing';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {LoginService} from './services/login.service';
+import {AdminComponent} from './admin/admin.component';
 
 @NgModule({
     imports: [
@@ -21,6 +22,7 @@ import {LoginService} from './services/login.service';
         RegisterComponent,
         LoginComponent,
         AppComponent,
+        AdminComponent,
     ],
     providers: [
         LoginService
