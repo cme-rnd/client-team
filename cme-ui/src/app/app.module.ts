@@ -11,6 +11,7 @@ import {LoginComponent} from './login/login.component';
 import {LoginService} from './services/login.service';
 import {AdminComponent} from './authenticated/admin/admin.component';
 import {UserComponent} from './authenticated/user/user.component';
+import {AdminService} from './services/admin.service';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import {UserComponent} from './authenticated/user/user.component';
         UserComponent,
     ],
     providers: [
-        LoginService
+        LoginService,
+        AdminService
     ],
     bootstrap: [AppComponent]
 })
