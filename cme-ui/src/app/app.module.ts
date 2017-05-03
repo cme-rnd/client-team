@@ -9,7 +9,7 @@ import {routing} from './app.routing';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {LoginService} from './services/login.service';
-import {AdminComponent} from './admin/admin.component';
+import {AdminComponent} from './authenticated/admin/admin.component';
 
 @NgModule({
     imports: [
