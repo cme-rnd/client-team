@@ -13,5 +13,9 @@ export class LoginService {
         if ((username === password) && (username === 'admin')) {
             this.router.navigate(['/admin']);
         }
+
+        if ((username === password) && (username === 'user')) {
+            this.router.navigate(['/user'])
+        }
     }
 }

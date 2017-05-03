@@ -10,6 +10,7 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {LoginService} from './services/login.service';
 import {AdminComponent} from './authenticated/admin/admin.component';
+import {UserComponent} from './authenticated/user/user.component';
 
 @NgModule({
     imports: [
@@ -23,6 +24,7 @@ import {AdminComponent} from './authenticated/admin/admin.component';
         LoginComponent,
         AppComponent,
         AdminComponent,
+        UserComponent,
     ],
     providers: [
         LoginService
