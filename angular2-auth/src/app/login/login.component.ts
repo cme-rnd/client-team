@@ -18,14 +18,8 @@ export class LoginComponent implements OnInit {
     }
 
     doLogin() {
-        // let userName = this.model.username;
-        // let password = this.model.password;
-        // this.loginService.doLogin(userName, password);
-
-        this.loginService.doCallPostRestApi();
-
-        // this.loginService.doCallGetRestApi();
-
-        // this.loginService.doCallGetRestApiByUserId();
+        let userName = this.model.username;
+        let password = this.model.password;
+        this.loginService.doLogin(userName, password);
     }
 }
