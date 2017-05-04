@@ -1,7 +1,7 @@
-﻿import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AdminService} from '../../services/admin.service';
-import {User} from '../../models/user';
+﻿import {Component, OnInit} from "@angular/core";
+import {Router} from "@angular/router";
+import {AdminService} from "../../services/admin.service";
+import {User} from "../../models/user";
 
 @Component({
     selector: 'admin-form',

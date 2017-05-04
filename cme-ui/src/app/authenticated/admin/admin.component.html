@@ -16,11 +16,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let item of mf.userList">
-        <td>{{item.name}}</td>
-        <td>{{item.email}}</td>
-        <td class="text-right">{{item.age}}</td>
-        <td>{{item.city | uppercase}}</td>
+    <tr *ngFor="let item of mf.data">
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td class="text-right">{{item.userName}}</td>
+        <td>{{item.password | uppercase}}</td>
     </tr>
     </tbody>
     <tfoot>
