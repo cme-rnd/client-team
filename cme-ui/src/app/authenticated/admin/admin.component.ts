@@ -9,7 +9,6 @@ import {User} from '../../models/user';
     styleUrls: ['admin.component.css']
 })
 export class AdminComponent implements OnInit {
-    model: any = {};
 
     public userList: User[];
 
