@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Router} from '@angular/router';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import {Observable} from 'rxjs';
-import {UserWrapper} from '../models/user';
+import {CreateUserList, UserWrapper} from '../models/user';
 
 @Injectable()
 export class AdminService {
@@ -12,9 +13,12 @@ export class AdminService {
     }
 
     getListUser(): Observable<UserWrapper> {
-        return Observable.create(new UserWrapper()).map((response: Response) => {
-            console.log(response);
-            return response.json();
+        let userResponse = new UserWrapper();
+        userResponse.statusCode = 'success';
+        userResponse.statusMessage = 'Get list user successful';
+        userResponse.data = CreateUserList;
+        return Observable.of(userResponse).map((response) => {
+            return response;
         });
     }
 }

@@ -13,3 +13,9 @@ export class UserWrapper {
     statusMessage: string;
     data: User[];
 }
+
+export const CreateUserList: User[] = [
+    {firstName: 'Hieu', lastName: 'Nguyen', userName: 'admin', password: 'admin'},
+    {firstName: 'Peter', lastName: 'Tran', userName: 'user', password: 'user'},
+];
+

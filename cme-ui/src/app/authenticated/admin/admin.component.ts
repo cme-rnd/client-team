@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
     private showListUserInfo() {
         this.adminService.getListUser().subscribe(response => {
             if (response.statusCode === 'success') {
-                this.UserList = response.data
+                this.UserList = response.data;
             }
         });
     }
