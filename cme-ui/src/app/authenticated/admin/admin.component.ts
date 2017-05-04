@@ -11,7 +11,7 @@ import {User} from '../../models/user';
 export class AdminComponent implements OnInit {
     model: any = {};
 
-    private UserList: User[];
+    public userList: User[];
 
     constructor(private router: Router,
                 private adminService: AdminService) {
@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
     private showListUserInfo() {
         this.adminService.getListUser().subscribe(response => {
             if (response.statusCode === 'success') {
-                this.UserList = response.data;
+                this.userList = response.data;
             }
         });
     }
