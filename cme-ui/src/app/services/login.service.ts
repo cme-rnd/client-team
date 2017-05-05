@@ -15,7 +15,7 @@ export class LoginService {
         }
 
         if ((username === password) && (username === 'user')) {
-            this.router.navigate(['/user'])
+            this.router.navigate(['/user']);
         }
     }
 }
