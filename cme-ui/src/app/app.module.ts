@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 import {DataTableModule} from 'angular2-datatable';
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
+import {ModalModule} from 'ngx-modal';
 
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
@@ -19,7 +20,8 @@ import {AdminService} from './services/admin.service';
         FormsModule,
         routing,
         HttpModule,
-        DataTableModule
+        DataTableModule,
+        ModalModule,
     ],
     declarations: [
         RegisterComponent,
