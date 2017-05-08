@@ -1,33 +1,49 @@
-﻿<table class="table table-striped" [mfData]="userList" #mf="mfDataTable" [mfRowsOnPage]="5">
-    <thead>
-    <tr>
-        <th style="width: 20%">
-            <mfDefaultSorter by="firstname">First Name</mfDefaultSorter>
-        </th>
-        <th style="width: 50%">
-            <mfDefaultSorter by="lastname">Last Name</mfDefaultSorter>
-        </th>
-        <th style="width: 10%">
-            <mfDefaultSorter by="username">User Name</mfDefaultSorter>
-        </th>
-        <th style="width: 20%">
-            <mfDefaultSorter by="password">Password</mfDefaultSorter>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of mf.data">
-        <td>{{item.firstName}}</td>
-        <td>{{item.lastName}}</td>
-        <td class="text-right">{{item.userName}}</td>
-        <td>{{item.password | uppercase}}</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td colspan="4">
-            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-        </td>
-    </tr>
-    </tfoot>
-</table>
+﻿<div class="row">
+    <table class="table table-striped" [mfData]="userList" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+        <tr>
+            <th>
+                <mfDefaultSorter by="username">User Name</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="password">Password</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="firstname">First Name</mfDefaultSorter>
+            </th>
+            <th>
+                <mfDefaultSorter by="lastname">Last Name</mfDefaultSorter>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of mf.data">
+            <td><a (click)="userDetailedModal.open()">{{item.userName}}</a></td>
+            <td>{{item.password | uppercase}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="row">
+    <modal #userDetailedModal [closeOnEscape]="false" [closeOnOutsideClick]="false">
+        <modal-header>
+            <h1>I am third modal</h1>
+        </modal-header>
+        <modal-content>
+            You cannot close this modal by pressing "ESC" button or clicking outside of the modal.
+        </modal-content>
+        <modal-footer>
+            <button class="btn btn-primary" (click)="userDetailedModal.close()">okay!</button>
+        </modal-footer>
+    </modal>
+</div>
