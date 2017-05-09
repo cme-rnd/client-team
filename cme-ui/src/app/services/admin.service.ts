@@ -21,4 +21,30 @@ export class AdminService {
             return response;
         });
     }
+
+    getUserDetailedByUserName(username: String): Observable<UserWrapper> {
+        let userList = CreateUserList;
+        let userWrapper = new UserWrapper();
+        let userObject = userList.filter((user) => user.userName === username);
+        userWrapper.statusCode = 'success';
+        userWrapper.statusMessage = 'Get user detailed successful';
+        userWrapper.data = userObject;
+        console.log(userWrapper);
+        return Observable.of(userWrapper).map((response) => {
+            console.log(response);
+            return response;
+        });
+
+        // for (let user of userList) {
+        //     if (user.userName === username) {
+        //         userWrapper.statusCode = 'success';
+        //         userWrapper.statusMessage = 'Get user detailed successful';
+        //         userWrapper.data.map(()) = user;
+        //         return Observable.of(userWrapper).map((res) => {
+        //             console.log(res);
+        //             return res;
+        //         });
+        //     }
+        // }
+    }
 }

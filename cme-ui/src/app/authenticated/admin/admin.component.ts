@@ -21,8 +21,12 @@ export class AdminComponent implements OnInit {
         this.showListUserInfo();
     }
 
-    onClick() {
-        //
+    showUserDetailedByUserName() {
+        this.adminService.getUserDetailedByUserName('admin').subscribe(response => {
+            if (response.statusCode === 'success') {
+                this.userList = response.data;
+            }
+        });
     }
 
     private showListUserInfo() {
