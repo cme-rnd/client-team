@@ -1,148 +1,109 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h2>Hi All. This is the User Page DashBoard</h2>
+﻿<!-- first modal: modal with custom header, content and footer -->
+<div class="row">
+    <button (click)="firstModal.open()">modal with custom header content and footer</button>
+    <modal #firstModal>
+        <modal-header>
+            <h1>I am first modal</h1>
+        </modal-header>
+        <modal-content>
+            This modal has its own header, content and footer.
+        </modal-content>
+        <modal-footer>
+            <button class="btn btn-primary" (click)="firstModal.close()">okay!</button>
+        </modal-footer>
+    </modal>
 </div>
 
+<!-- second modal: disable close button -->
+<div class="row">
+    <button (click)="secondModal.open()">modal without close button</button>
+    <modal #secondModal [hideCloseButton]="true">
+        <modal-header>
+            <h1>I am second modal</h1>
+        </modal-header>
+        <modal-content>
+            This modal does not have close button.
+        </modal-content>
+        <modal-footer>
+            <button class="btn btn-primary" (click)="secondModal.close()">okay!</button>
+        </modal-footer>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; first modal: modal with custom header, content and footer &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="firstModal.open()">modal with custom header content and footer</button>-->
-<!--<modal #firstModal>-->
-<!--<modal-header>-->
-<!--<h1>I am first modal</h1>-->
-<!--</modal-header>-->
-<!--<modal-content>-->
-<!--This modal has its own header, content and footer.-->
-<!--</modal-content>-->
-<!--<modal-footer>-->
-<!--<button class="btn btn-primary" (click)="firstModal.close()">okay!</button>-->
-<!--</modal-footer>-->
-<!--</modal>-->
-<!--</div>-->
+<!-- third modal: disable close button -->
+<div class="row">
+    <button (click)="thirdModal.open()">modal that cannot be simply closed</button>
+    <modal #thirdModal [closeOnEscape]="false" [closeOnOutsideClick]="false">
+        <modal-header>
+            <h1>I am third modal</h1>
+        </modal-header>
+        <modal-content>
+            You cannot close this modal by pressing "ESC" button or clicking outside of the modal.
+        </modal-content>
+        <modal-footer>
+            <button class="btn btn-primary" (click)="thirdModal.close()">okay!</button>
+        </modal-footer>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; second modal: disable close button &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="secondModal.open()">modal without close button</button>-->
-<!--<modal #secondModal [hideCloseButton]="true">-->
-<!--<modal-header>-->
-<!--<h1>I am second modal</h1>-->
-<!--</modal-header>-->
-<!--<modal-content>-->
-<!--This modal does not have close button.-->
-<!--</modal-content>-->
-<!--<modal-footer>-->
-<!--<button class="btn btn-primary" (click)="secondModal.close()">okay!</button>-->
-<!--</modal-footer>-->
-<!--</modal>-->
-<!--</div>-->
+<!-- forth modal: this modal has default title and cancle button -->
+<div class="row">
+    <button (click)="forthModal.open()">modal that has title and cancel button</button>
+    <modal #forthModal title="I am forth modal" cancelButtonLabel="close it">
+        <modal-content>
+            You can simply use "title" attribute to provide a modal default header.<br/>
+            Also you can add default cancel button by providing a label to it.
+        </modal-content>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; third modal: disable close button &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="thirdModal.open()">modal that cannot be simply closed</button>-->
-<!--<modal #thirdModal [closeOnEscape]="false" [closeOnOutsideClick]="false">-->
-<!--<modal-header>-->
-<!--<h1>I am third modal</h1>-->
-<!--</modal-header>-->
-<!--<modal-content>-->
-<!--You cannot close this modal by pressing "ESC" button or clicking outside of the modal.-->
-<!--</modal-content>-->
-<!--<modal-footer>-->
-<!--<button class="btn btn-primary" (click)="thirdModal.close()">okay!</button>-->
-<!--</modal-footer>-->
-<!--</modal>-->
-<!--</div>-->
+<!-- fifth modal: this modal uses extra "large class" -->
+<div class="row">
+    <button (click)="fifthModal.open()">large modal</button>
+    <modal #fifthModal title="I am fifth modal" cancelButtonLabel="close it" modalClass="modal-lg">
+        <modal-content>
+            Very large modal.
+        </modal-content>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; forth modal: this modal has default title and cancle button &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="forthModal.open()">modal that has title and cancel button</button>-->
-<!--<modal #forthModal title="I am forth modal" cancelButtonLabel="close it">-->
-<!--<modal-content>-->
-<!--You can simply use "title" attribute to provide a modal default header.<br/>-->
-<!--Also you can add default cancel button by providing a label to it.-->
-<!--</modal-content>-->
-<!--</modal>-->
-<!--</div>-->
+<!-- sixth modal: this modal uses extra "small class" -->
+<div class="row">
+    <button (click)="sixthModal.open()">small modal</button>
+    <modal #sixthModal title="I am sixth modal" cancelButtonLabel="close it" modalClass="modal-sm">
+        <modal-content>
+            Very small modal.
+        </modal-content>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; fifth modal: this modal uses extra "large class" &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="fifthModal.open()">large modal</button>-->
-<!--<modal #fifthModal title="I am fifth modal" cancelButtonLabel="close it" modalClass="modal-lg">-->
-<!--<modal-content>-->
-<!--Very large modal.-->
-<!--</modal-content>-->
-<!--</modal>-->
-<!--</div>-->
+<!-- seventh modal: this modal can listen close event -->
+<div class="row">
+    <button (click)="seventhModal.open()">it opens first modal after you close it</button>
+    <modal #seventhModal title="I am seventh modal" cancelButtonLabel="close it" (onClose)="firstModal.open()">
+        <modal-content>
+            Now try to close it and it will open you first modal.
+        </modal-content>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; sixth modal: this modal uses extra "small class" &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="sixthModal.open()">small modal</button>-->
-<!--<modal #sixthModal title="I am sixth modal" cancelButtonLabel="close it" modalClass="modal-sm">-->
-<!--<modal-content>-->
-<!--Very small modal.-->
-<!--</modal-content>-->
-<!--</modal>-->
-<!--</div>-->
+<!-- eighth modal: this modal can listen close event -->
+<div class="row">
+    <button (click)="eighthModal.open()">it opens first modal right after you open it</button>
+    <modal #eighthModal title="I am eighth modal" cancelButtonLabel="close it" (onOpen)="firstModal.open()">
+        <modal-content>
+            This modal opened first modal right after you opened it.
+        </modal-content>
+    </modal>
+</div>
 
-<!--&lt;!&ndash; seventh modal: this modal can listen close event &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="seventhModal.open()">it opens first modal after you close it</button>-->
-<!--<modal #seventhModal title="I am seventh modal" cancelButtonLabel="close it" (onClose)="firstModal.open()">-->
-<!--<modal-content>-->
-<!--Now try to close it and it will open you first modal.-->
-<!--</modal-content>-->
-<!--</modal>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; eighth modal: this modal can listen open event &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="eighthModal.open()">it opens first modal right after you open it</button>-->
-<!--<modal #eighthModal title="I am eighth modal" cancelButtonLabel="close it" (onOpen)="firstModal.open()">-->
-<!--<modal-content>-->
-<!--This modal opened first modal right after you opened it.-->
-<!--</modal-content>-->
-<!--</modal>-->
-<!--</div>-->
-
-<!--&lt;!&ndash; ninth modal: this modal can do something after you click submit button &ndash;&gt;-->
-<!--<div class="row">-->
-<!--<button (click)="ninthModal.open()">it opens first modal after you click submit button</button>-->
-<!--<modal #ninthModal title="I am ninth modal" submitButtonLabel="submit" (onSubmit)="firstModal.open()">-->
-<!--<modal-content>-->
-<!--This modal has a submit button with your custom label. Also it can make an action after you-->
-<!--click that submit button. Here it will open you first modal after you click submit.-->
-<!--</modal-content>-->
-<!--</modal>-->
-<!--</div>-->
-
-<!--<div class="row">-->
-<!--<button (click)="firstModal.open()">modal with custom header content and footer</button>-->
-<!--<div class="container-fluid custom-modal-container">-->
-<!--<div class="row custom-modal-header">-->
-<!--<div class="col-sm-12">-->
-<!--<h1>A Custom modal design</h1>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="row" [ngClass]="{'myclass' : shouldUseMyClass}">-->
-<!--<div class="col-xs-12">-->
-<!--<div class="jumbotron">-->
-<!--<h1>Do the math to quit:</h1>-->
-<!--<p class="lead">I received an injection of the number <strong>{{context.num1}}</strong> and the-->
-<!--number <strong>{{context.num2}}</strong></p>-->
-<!--<span>What is the sum?</span>-->
-<!--<input class="form-control" type="text" #answer (keyup)="onKeyUp(answer.value)" autofocus>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<h1>Basic Modal sample - angular2-modal@1.1.1</h1>
-<button (click)="onClick()">Alert</button>
-<br>
-<h1>Custom Modal example:</h1>
-<button (click)="openCustom()">Custom Modal</button>
-<p>
-    <b>IMPORTANT:</b>
-    Since 'AdditionCalculateWindow' is never explicitly used (in a template)
-    we must tell angular about it by adding it to the <strong>entryComponents</strong> property in the module meta.
-</p>
+<!-- ninth modal: this modal can do something after you click submit button -->
+<div class="row">
+    <button (click)="ninthModal.open()">it opens first modal after you click submit button</button>
+    <modal #ninthModal title="I am ninth modal" submitButtonLabel="submit" (onSubmit)="firstModal.open()">
+        <modal-content>
+            This modal has a submit button with your custom label. Also it can make an action after you
+            click that submit button. Here it will open you first modal after you click submit.
+        </modal-content>
+    </modal>
+</div>
