@@ -21,11 +21,9 @@ export class AdminComponent implements OnInit {
         this.showListUserInfo();
     }
 
-    showUserDetailedByUserName(itemModel, modal) {
+    showUserDetailedByUserName(itemModel, popUpModal) {
         this.user = itemModel;
-        console.log(this.user);
-        console.log(modal);
-        modal.open(itemModel);
+        popUpModal.open(this.user);
     }
 
     private showListUserInfo() {

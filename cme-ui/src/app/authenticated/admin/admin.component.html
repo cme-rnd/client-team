@@ -43,10 +43,10 @@
         </modal-header>
 
         <modal-content *ngIf="user">
+            {{user.firstName}}
+            {{user.lastName}}
             {{user.userName}}
-            <!--{{itemModel.lastName}}-->
-            <!--{{userName}}-->
-            <!--{{password}}-->
+            {{user.password}}
         </modal-content>
         <modal-footer>
             <button class="btn btn-primary" (click)="userDetailedModal.close()">okay!</button>
