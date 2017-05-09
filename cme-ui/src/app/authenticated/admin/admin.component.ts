@@ -10,8 +10,8 @@ import {User} from '../../models/user';
     styleUrls: ['admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
     public userList: User[];
+    public user: User;
 
     constructor(private router: Router,
                 private adminService: AdminService) {
@@ -21,12 +21,11 @@ export class AdminComponent implements OnInit {
         this.showListUserInfo();
     }
 
-    showUserDetailedByUserName() {
-        this.adminService.getUserDetailedByUserName('admin').subscribe(response => {
-            if (response.statusCode === 'success') {
-                this.userList = response.data;
-            }
-        });
+    showUserDetailedByUserName(itemModel, modal) {
+        this.user = itemModel;
+        console.log(this.user);
+        console.log(modal);
+        modal.open(itemModel);
     }
 
     private showListUserInfo() {

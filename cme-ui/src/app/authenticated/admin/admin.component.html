@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let item of mf.data">
-            <td><a (click)="userDetailedModal.open()">{{item.userName}}</a></td>
+            <td><a (click)="showUserDetailedByUserName(item, userDetailedModal)">{{item.userName}}</a></td>
             <td>{{item.userName}}</td>
             <td>{{item.password | uppercase}}</td>
             <td>{{item.firstName}}</td>
@@ -37,12 +37,16 @@
 
 
 <div class="row">
-    <modal #userDetailedModal [closeOnEscape]="false" [closeOnOutsideClick]="false" (onOpen)="showUserDetailedByUserName()">
+    <modal #userDetailedModal [closeOnEscape]="false" [closeOnOutsideClick]="false">
         <modal-header>
             <h1>I am third modal</h1>
         </modal-header>
-        <modal-content>
-            {{userList[0].firstName}}
+
+        <modal-content *ngIf="user">
+            {{user.userName}}
+            <!--{{itemModel.lastName}}-->
+            <!--{{userName}}-->
+            <!--{{password}}-->
         </modal-content>
         <modal-footer>
             <button class="btn btn-primary" (click)="userDetailedModal.close()">okay!</button>
