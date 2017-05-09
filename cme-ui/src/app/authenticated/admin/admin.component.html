@@ -42,11 +42,11 @@
             <h1>I am third modal</h1>
         </modal-header>
 
-        <modal-content *ngIf="user">
-            {{user.firstName}}
-            {{user.lastName}}
-            {{user.userName}}
-            {{user.password}}
+        <modal-content *ngIf="userModel">
+            {{userModel.firstName}}
+            {{userModel.lastName}}
+            {{userModel.userName}}
+            {{userModel.password}}
         </modal-content>
         <modal-footer>
             <button class="btn btn-primary" (click)="userDetailedModal.close()">okay!</button>

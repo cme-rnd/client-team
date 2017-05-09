@@ -11,7 +11,7 @@ import {User} from '../../models/user';
 })
 export class AdminComponent implements OnInit {
     public userList: User[];
-    public user: User;
+    public userModel: User;
 
     constructor(private router: Router,
                 private adminService: AdminService) {
@@ -22,8 +22,8 @@ export class AdminComponent implements OnInit {
     }
 
     showUserDetailedByUserName(itemModel, popUpModal) {
-        this.user = itemModel;
-        popUpModal.open(this.user);
+        this.userModel = itemModel;
+        popUpModal.open(this.userModel);
     }
 
     private showListUserInfo() {
