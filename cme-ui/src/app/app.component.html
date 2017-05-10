@@ -1,27 +1,27 @@
-﻿<header>
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h4 class="white">
+﻿<!-- Header -->
+<header>
+    <div [ngClass]="'panel panel-primary'">
+        <div [ngClass]="'panel-heading col-lg-12 text-center'">
+            <h1 [ngClass]="'white'">
                 <p>CME R&D Center</p>
-            </h4>
+            </h1>
         </div>
     </div>
 </header>
+
 <!-- main app container -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-            <router-outlet></router-outlet>
-        </div>
+<div [ngClass]="'panel-body container'">
+    <div [ngClass]="'col-sm-8 col-sm-offset-2 app-body-margin-top'">
+        <router-outlet></router-outlet>
     </div>
 </div>
+
 <!-- Footer -->
 <footer>
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h4 class="white">
-                <p>Copyright &copy; <a href="https://chsakell.com" target="_blank">CME Research & Development Center</a></p>
-            </h4>
-        </div>
+    <div [ngClass]="'col-lg-12 text-center app-footer-margin-top'">
+        <h4 [ngClass]="white">
+            <p>Copyright &copy; <a href="https://chsakell.com" target="_blank">CME Research & Development Center</a>
+            </p>
+        </h4>
     </div>
 </footer>
