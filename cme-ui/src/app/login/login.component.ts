@@ -9,6 +9,8 @@ import {LoginService} from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
     model: any = {};
+    loading = false;
+    error = '';
 
     ngOnInit(): void {
     }
@@ -18,8 +20,13 @@ export class LoginComponent implements OnInit {
     }
 
     doLogin() {
+        this.loading = true;
         let userName = this.model.username;
         let password = this.model.password;
-        this.loginService.doLogin(userName, password);
+        let result = this.loginService.doLogin(userName, password);
+        if (!result) {
+            this.error = 'Username or password is incorrect';
+            this.loading = false;
+        }
     }
 }

@@ -12,10 +12,13 @@ export class LoginService {
     doLogin(username: string, password: string) {
         if ((username === password) && (username === 'admin')) {
             this.router.navigate(['/admin']);
+            return true;
         }
 
         if ((username === password) && (username === 'user')) {
             this.router.navigate(['/user']);
+            return true;
         }
+        return false;
     }
 }

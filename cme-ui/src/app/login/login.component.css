@@ -1,0 +1,8 @@
+#loading{
+    background: url("../../assets/images/loading_icon.gif");
+    background-repeat: no-repeat;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: transparent;
+}
