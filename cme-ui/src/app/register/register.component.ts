@@ -1,6 +1,7 @@
 ﻿import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {LoginService} from '../services/login.service';
+import {RegisterService} from '../services/register.service';
+import {User} from '../models/user';
 
 @Component({
     selector: 'register-form',
@@ -14,12 +15,19 @@ export class RegisterComponent implements OnInit {
     }
 
     constructor(private router: Router,
-                private loginService: LoginService) {
+                private registerService: RegisterService) {
     }
 
-    doLogin() {
+    registerNewAccount() {
+        let firstName = this.model.firstName;
+        let lastName = this.model.lastName;
         let userName = this.model.username;
         let password = this.model.password;
-        this.loginService.doLogin(userName, password);
+        let user = new User();
+        user.firstName = firstName;
+        user.lastName = lastName;
+        user.userName = userName;
+        user.password = password;
+        this.registerService.createNewAccount(user);
     }
 }
